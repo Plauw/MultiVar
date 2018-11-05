@@ -20,16 +20,17 @@ print( "placeholder string: '", mvar.placeholderString!, "'")
 print( "Stats string:\n'", mvar.statsString, "'")
 ```
 ### Output
-reference value: 123
-values added: 7
-lowest value: 0
-highest value: 125
-average: 73.5714285714286
-placeholder string: ' Multiple values: 0, 10, 123..125 '
-Stats string: 
-' Statistics
-
-Sum is 515.
-Total entries is 7 of which 5 unique.
-Average: 73.57
-Range: 0 ≤ i ≤ 125. '
+---
+reference value: 123 <br/>
+values added: 7 <br/>
+lowest value: 0 <br/>
+highest value: 125 <br/>
+average: 73.5714285714286 <br/>
+placeholder string: ' Multiple values: 0, 10, 123..125 ' <br/>
+Stats string:  <br/>
+' Statistics <br/>
+ <br/>
+Sum is 515. <br/>
+Total entries is 7 of which 5 unique. <br/>
+Average: 73.57 <br/>
+Range: 0 ≤ i ≤ 125. ' <br/>
