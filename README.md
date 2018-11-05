@@ -18,7 +18,7 @@ print( "highest value:", mvar.highest!)
 print( "average:", mvar.average)
 print( "placeholder string: '", mvar.placeholderString!, "'")
 print( "Stats string:\n'", mvar.statsString, "'")
-
+```
 ### Output
 reference value: 123
 values added: 7
@@ -26,7 +26,7 @@ lowest value: 0
 highest value: 125
 average: 73.5714285714286
 placeholder string: ' Multiple values: 0, 10, 123..125 '
-Stats string:
+Stats string: 
 ' Statistics
 
 Sum is 515.
