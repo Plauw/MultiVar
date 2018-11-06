@@ -27,7 +27,7 @@ extension Set where Element : Comparable {
     public var highest: Element? { return self.sorted().last }
 }
 
-extension Set where Element == Int { // BinaryInteger???
+extension Set where Element == Int {
     
     // NOTE: these are sum/average of the set (which may have been reduced by duplicates!!).
     public var sum: Int {  return self.reduce(0, +)  } // ATTENTION/TODO: may overflow Int
@@ -164,7 +164,7 @@ extension Set where Element == Double {
 
 extension Set where Element: RawRepresentable, Element : Comparable { // enums
     
-    // Format the set in a 'rangeView way'
+    // Format the Set in a 'rangeView way'
     public var formattedDescription: String { return formattedDescription( limitRangesTo: 4 ) }
     public func formattedDescription( limitRangesTo limit: Int ) -> String {
         
@@ -191,13 +191,23 @@ extension Set where Element: RawRepresentable, Element : Comparable { // enums
 
 
 /*
- | Our MultiVar Class deailing with Hasable objects.
+ | Our MultiVar Class dealing with Hasable objects.
  |
- | This class contains
- | - referenceValue: the value that will be presented to the user in case of multiple values (optional).
- | - values: a Set containing all unique values
- | - originals: all added values, unsorted (excluding referenceValue).
- | -
+ | This class contains the following public members:
+ | - referenceValue:    the value that will be presented as de to the user in case of multiple values (optional).
+ |                          The referenceValue can be considered as default value in case of multiple values.
+ | - values:            a Set containing all unique values
+ | - originals:         all added values, unsorted (excluding referenceValue).
+ | - hasReferenceValue: indicates if a reference value has been set
+ | - hasMultipleValues: indicates if a reference value has been set
+ | - addCount:          the number of added values (excluding ref val but including duplicates)
+ | - uniqueCount:       the number of added values that are unique (excl ref val)
+ |
+ | Examples of class creation:
+ | var mvars = MultiVar( withReferenceValue referenceValue: "aap" )
+ | mvars.add( ["aap", "noot", "mies"] );
+ | var mvari = MultiVar( withReferenceValue referenceValue: 1, andValues: [1,2,3,3,5,10] )
+ |
  */
 
 class MultiVar<Element:Hashable>: NSObject {
@@ -252,6 +262,7 @@ class MultiVar<Element:Hashable>: NSObject {
         return str
     }
 }
+
 
 extension MultiVar where Element : Comparable {
     
